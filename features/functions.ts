@@ -50,8 +50,8 @@ const logWeather = ({ date, weather }: { date: Date, weather: string }) => {
 //Annotation in objects
 
 const profile = {
-  name: alex;
-  age: 20;
+  name: 'alex',
+  age: 20,
   coords: {
     lat: 0,
     lng: 15
@@ -61,7 +61,8 @@ const profile = {
    }
 }
 
-//notice when you do destrucuring, you have to specify the property seperately instead of just doing { age: number }
+//notice when you do destrucuring, you have to specify the property seperately instead of just doing { age } : number.   
 const { age }: { age: number } = profile;
+const { age, name }: { age: number, name: string } = profile;
 
 const { coords: { lat, lng } }: { coords: { lat:number, lng:number} } = profile;
