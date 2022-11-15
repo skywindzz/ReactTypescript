@@ -2,10 +2,7 @@
 
 //using interface decide what's required inside a variable that has a type. typescript will check if the variable has the required properties
 
-interface Vehicle {
-  name: string;
-  year: Date;
-  broken: boolean;
+interface Reportable {
   summary(): string;
 }
 
@@ -15,7 +12,24 @@ const oldCivic = {
   broken: true,
   summary(): string {
     return `${this.name} is ${this.broken ? 'broken' : 'working'}`;
-  }
+  },
+};
+
+const drink = {
+  color: 'brown',
+  carbonated: true,
+  sugar: 40,
+  summary(): string {
+    return `My drink has ${this.sugar} grams of sugar`;
+  },
+};
+
+const printSummary = (item: Reportable): void => {
+  console.log(item.summary());
+};
+
+printSummary(oldCivic);
+printSummary(drink);
 
 /* const printVehicle = (vehicle: { name: string; year: number; broken: boolean }):void => {
   console.log(`Name: ${vehicle.name}`);
@@ -24,8 +38,8 @@ const oldCivic = {
 }
 */
 
+/*
 const printVehicle = (vehicle: Vehicle) => {
-  console.log(vehicle.summary());
-};
-
-printVehicle(oldCivic);
+    console.log(vehicle.summary());
+  };
+  */
